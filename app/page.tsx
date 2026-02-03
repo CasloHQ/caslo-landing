@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import NavBar from "@/components/ui/NavBar";
 import HeroSection from "@/components/ui/hero-section";
+import TextSliderSection from "@/components/ui/TextSliderSection";
 import VideoSliderSection from "@/components/ui/VideoSliderSection";
-
+import VideoGridMarqueeSection from "@/components/ui/VideoGridMarqueeSection";
 export default function Home() {
   const heroRef = useRef<HTMLElement | null>(null);
   const [hideNav, setHideNav] = useState(false);
@@ -14,11 +15,8 @@ export default function Home() {
     if (!el) return;
 
     const obs = new IntersectionObserver(
-      ([entry]) => {
-        // Hide navbar once hero is less visible (tweak 0.65 if needed)
-        setHideNav(!(entry.isIntersecting && entry.intersectionRatio > 0.65));
-      },
-      { threshold: [0, 0.35, 0.65, 1] },
+      ([entry]) => setHideNav(entry.intersectionRatio < 0.75),
+      { rootMargin: "-8% 0px -8% 0px", threshold: [0, 0.75, 1] },
     );
 
     obs.observe(el);
@@ -29,7 +27,10 @@ export default function Home() {
     <main
       className="
         relative w-full h-dvh overflow-y-auto overflow-x-hidden
-        snap-y snap-mandatory scroll-smooth
+        snap-y snap-mandatory
+        [scroll-snap-stop:always]
+        [overscroll-behavior-y:contain]
+        [scrollbar-gutter:stable]
       "
     >
       <NavBar hidden={hideNav} />
@@ -39,9 +40,18 @@ export default function Home() {
         <HeroSection />
       </section>
 
+      {/* TEXT SLIDER */}
+      <section className="snap-start h-dvh">
+        <TextSliderSection />
+      </section>
+
       {/* VIDEO */}
-      <section className="snap-start min-h-dvh">
+      <section className="snap-start h-dvh">
         <VideoSliderSection />
+      </section>
+
+      <section className="snap-start min-h-dvh">
+        <VideoGridMarqueeSection />
       </section>
     </main>
   );

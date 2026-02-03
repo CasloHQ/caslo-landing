@@ -102,7 +102,7 @@ export default function HeroSection({
       <div className="absolute inset-0 bg-black/35 z-[1]" />
 
       {/* Light Rays */}
-      <div className="absolute inset-0 z-[5] pointer-events-none opacity-30">
+      <div className="absolute inset-0 z-[5] pointer-events-none opacity-60">
         <LightRays />
       </div>
 
