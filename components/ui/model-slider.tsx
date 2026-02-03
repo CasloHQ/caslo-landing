@@ -16,7 +16,7 @@ export type ModelItem = {
 
 export const MODELS: ModelItem[] = [
   {
-    url: "/models/tiger_new_draco.glb",
+    url: r2("/glb/tiger_new_draco.glb"),
     bg: r2("/images/workshop-new-bg.jpg"),
     title: "FORGED GUARDIAN",
     tagline: "Primal Fury, Engineered for Glory.",
@@ -25,7 +25,7 @@ export const MODELS: ModelItem[] = [
     breadcrumbs: ["Collection", "Statue"],
   },
   {
-    url: "/models/owl_draco.glb",
+    url: r2("/glb/owl_draco.glb"),
     bg: r2("/images/owl-bg.jpg"),
     title: "FROST SAGE",
     tagline: "Wisdom carved in winter.",
@@ -34,7 +34,7 @@ export const MODELS: ModelItem[] = [
     breadcrumbs: ["Collection", "Statue"],
   },
   {
-    url: "/models/jesus_draco.glb",
+    url: r2("/glb/jesus_draco.glb"),
     bg: r2("/images/jesus-bg.jpg"),
     title: "DIVINE CRAFT",
     tagline: "Grace shaped in metal.",
