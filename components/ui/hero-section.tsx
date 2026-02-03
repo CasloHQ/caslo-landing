@@ -11,13 +11,14 @@ import ModelSlider, {
 } from "@/components/ui/model-slider";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { r2 } from "@/lib/assets";
 
 type Props = {
   imageSrc?: string; // fallback
 };
 
 export default function HeroSection({
-  imageSrc = "/bg-images/workshop-bg-new.jpg",
+  imageSrc = r2("/images/workshop-new-bg.jpg"),
 }: Props) {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
