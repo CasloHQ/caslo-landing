@@ -1,6 +1,7 @@
 "use client";
 
 import Model from "@/components/ui/model";
+import { r2 } from "@/lib/assets";
 
 export type ModelItem = {
   url: string;
@@ -16,7 +17,7 @@ export type ModelItem = {
 export const MODELS: ModelItem[] = [
   {
     url: "/models/tiger_new_draco.glb",
-    bg: "/bg-images/workshop-new-bg.jpg",
+    bg: r2("/images/workshop-new-bg.jpg"),
     title: "FORGED GUARDIAN",
     tagline: "Primal Fury, Engineered for Glory.",
     description:
@@ -25,7 +26,7 @@ export const MODELS: ModelItem[] = [
   },
   {
     url: "/models/owl_draco.glb",
-    bg: "/bg-images/owl-bg.jpg",
+    bg: r2("/images/owl-bg.jpg"),
     title: "FROST SAGE",
     tagline: "Wisdom carved in winter.",
     description:
@@ -34,7 +35,7 @@ export const MODELS: ModelItem[] = [
   },
   {
     url: "/models/jesus_draco.glb",
-    bg: "/bg-images/jesus-bg.jpg",
+    bg: r2("/images/jesus-bg.jpg"),
     title: "DIVINE CRAFT",
     tagline: "Grace shaped in metal.",
     description:
