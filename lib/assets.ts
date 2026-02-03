@@ -1,4 +1,4 @@
-export const R2_BASE = process.env.NEXT_PUBLIC_R2_BASE_URL ?? "";
+export const R2_BASE = "https://assets.casloart.com";
 
 
 export function r2(path: string) {
